@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins',sans-serif;
+}
+.contain{
+    width: 100%;
+    height: 100vh;
+    padding: 0 8%;
+    position: relative;
+    /*background-image: linear-gradient(rgba(0,0,0.3),transparent),url(./Photos/macbook_air_2018.jpg);*/
+    background-image: linear-gradient(rgba(0,0,0.3),transparent),url('./Photos/banner_blog.jpg');
+    background-size: cover;
+    background-position: center;
+}
+nav{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 5px 0;
+}
+.logo,.cart-icon{
+    font-size:48px;color:#fffb;
+}
+nav ul{
+    flex:1;
+    text-align: right;
+    padding-right: 30px;
+    list-style: none;
+}
+nav ul li{
+    display: inline-block;
+    margin:20px 30px;
+}
+nav ul li a{
+    color:#fffb; 
+    text-decoration: none;
+    position: relative;
+}
+nav ul li a::after{
+    content:'';
+    width: 0%;
+    height: 3px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.3s;
+}
+nav ul li a:hover::after{
+    width: 50%;
+}
+.text-box{
+    color:#fff5;
+    position: absolute;
+    bottom: 8%;
+}
+.text-box p{
+    font-size: 50px;
+    font-weight: 600;
+}
+.text-box h1{
+    font-size: 100px;
+    line-height:160px;
+    margin-left: -10px;
+    color:transparent;
+    -webkit-text-stroke: 1px #fff5;
+    background:url(./Photos/TECHmart.jpg);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: back 20s linear infinite;
+}
+@keyframes back{
+    100%{
+        background-position: 2000px 0;
+    }
+}
+/* Right now,I do not want it.
+.text-box h3{
+    font-size:36px;  
+}*/
+.text-box .extra{
+    display: flex;align-items: center;
+    flex-wrap:wrap;
+    margin-top: 30px;
+    justify-content: space-between;
+}
+.text-box a{
+    background:url(./Photos/TECHmart_2.jpg);
+    color:#fffb;
+    text-decoration: none;
+    padding: 10px 20px;
+    margin-right: 20px;
+    border:3px solid #fffb;
+    box-shadow: 1px 2px 5px #fffb;
+    display: flex;
+    align-items: center;
+}
+.text-box a span{
+    font-size:30px;
+    line-height: 15px;
+}
+#blog-container .post .post-img{
+    overflow: hidden;
+    cursor: pointer;
+}
+#blog-container .post img{
+    transition: 0.3s ease;
+}
+#blog-container .post:hover img{
+    transform: scale(1.3) rotate(-10deg);  
+    opacity:0.8;
+}
+#blog-container .post h3{
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+#blog-container .post:hover h3{
+    color: #fd8c66;
+}
+#blog-home .line{
+    width:100%;height:10px;background-color:blueviolet;
+    box-shadow:0 1px 3px darkmagenta;
+}
+#blog-home h2{
+    color:darkslateblue;font-size: 36px;text-shadow: 1px 1px 0 blueviolet;
+    font-weight:bolder;
+}

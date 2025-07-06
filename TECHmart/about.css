@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?fmaily=Poppins:wght@300;600;700;800&family=Rubik:wght@300;400;500;600&display=swap');
+:root{
+    --primary-color:#ff4757;
+    --white-color:#ffffff;
+    --light-color:#f1f2f6;
+    --text-light-color:#747d8c;
+    --text-dark-color:#2f3542;
+}
+*{
+    margin: 0;padding: 0;
+}
+*,::before,::after{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Rubik',sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.6;
+    color:var(--text-dark-color);
+    background:linear-gradient(to right,#0f0c29,#302c29,#24243e);
+}
+a{
+    text-decoration: none;
+    color: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+img{
+    min-width: 100%;
+    vertical-align: middle;
+}
+ul{
+    list-style: none;
+}
+h1,h2{
+    font-weight: 500;
+    line-height: normal;
+}
+h1{
+    font-size: 26px;
+}
+h2{
+    font-size:20px;
+}
+.site{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+.container{
+    min-width: 1100px;
+    width: 100%;
+    margin: 0 auto;
+    padding:0 30px;
+
+}
+.item{
+    padding: 8px;
+}
+.card{
+    max-width: 320px;
+    background-color:var(--white-color);
+    border-radius: 10px;
+    box-shadow: rgb(255 255 255 / 20%) 0 0 0 8px;
+    margin:0 auto;
+    overflow: hidden;
+}
+.card .head{
+    position: relative;
+    height: 225px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    text-align: center;
+    align-items: center;
+}
+.card .thumbnail{
+    position: relative;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    box-shadow: rgb(0 0 0/20%) 0 8px 20px;
+    overflow: hidden;
+}
+.card .thumbnail img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+.card .head .blur, .card .head .blur::before{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card .head .blur::before{
+    content:'';
+    background-color: var(--primary-color);
+    border-radius: 0 0 65% 30%;
+    transform: translateY(0);
+    transition: transform .3s;
+}
+.card .meta{
+    position: relative;
+    color: var(--white-color);
+}
+.card .meta p{
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-style: 14px;
+}
+.card .main > div:not(.button){
+    padding: 10px 20px;
+    margin-top: 10px;
+}
+.card .brief strong{
+    text-transform: uppercase;
+    font-size: 13px;
+}
+.card .brief p{
+    color: var(--text-light-color);
+}
+.card :where(.socials ul,.button){
+    display: flex;
+    justify-content: center;
+}
+.card .socials a{
+    display: flex;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    padding: 10px;
+    margin: 0 5px;
+    border-radius: 50%;
+    background-color: var(--light-color);
+    transition: background-color .3s,color .3s;
+}
+.card .socials a:hover{
+    background-color: var(--primary-color);
+    color:var(--white-color);
+}
+.card .completed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    line-height: normal;
+}
+.card .completed strong{
+    font-size: 26px;
+    letter-spacing: -2px;
+}
+.card .completed span{
+    font-size: 13px;
+    color:var(--text-light-color);
+}
+.card .button {
+    height: 65px;
+}
+.card .button a{
+    position: relative;
+    width: 120px;
+    height: 36px;
+    padding: 5px 32px;
+    margin: auto auto 0;
+    background-color: var(--primary-color);
+    border-radius: 10px 10px 0 0;
+    transition: height .2s;
+}
+.card .button a span{
+    position: absolute;
+    bottom: 0;
+    width: 18px;
+    height: 18px;
+    overflow: hidden;
+    transform: translateY(18px);
+    transition: transform .5s;
+}
+.card .button a span:first-child{
+    left: -18px;
+}
+.card .button a span:last-child{
+    right: -18px;
+}
+.card .button a span::after{
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.card .button a span:first-child::after{
+    border-radius: 0 0 36px 0;
+    box-shadow: 0 0 0 12 var(--primary-color);
+}
+.card .button a span:last-child::after{
+    border-radius: 0 0 0 36px;
+    box-shadow: 0 0 0 12 var(--primary-color);
+} 
+.swiper-slide-active .card .blur{
+    background-size: cover;
+    background-position:bottom;
+    filter:blur(40px);
+    transform:scale(0) translateY(0);
+    transition: transform .5s .3s;
+}
+.swiper-slide-active .card.sabrina .blur{
+    background-image: url(./Photos/undraw_Blooming_re_2kc4.png);
+    transform:scale(1.5) translateY(-25%);
+}
+.swiper-slide-active .card.sultana .blur{
+    background-image: url(./Photos/undraw_Blooming_re_2kc4.png);
+    transform:scale(1.5) translateY(-25%);
+}
+.swiper-slide-active .card.sairika .blur{
+    background-image: url(./Photos/undraw_Blooming_re_2kc4.png);
+    transform:scale(1.5) translateY(-25%);
+}
+.swiper-slide-active .card .blur::before{
+    transform:translateY(-60%);
+}
+.swiper-slide-active .card .button{
+    background-color: var(--primary-color);
+    color:var(--white-color);
+}
+.swiper-slide-active .card .button a:hover{
+    height:40px;
+}
+.swiper-slide-active .card .button a span{
+    transform: translateY(0);
+}
+.swiper-slide-prev .card .blur::before{
+    border-radius:0 0 65%;  
+}
+.swiper .pagination{
+    text-align: center;
+    padding: 20px;
+}
+.swiper .pagination span{
+    height: 4px;
+    border-radius: 4px;
+    background-color: var(--text-light-color);
+    opacity: 1;
+    transition: width .3s;
+}
+.swiper .pagination span[class*=-active]{
+    width: 26px;
+    background-color: var(--primary-color);
+}
+.nextprev{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 15px 0;
+}
+.nextprev i{
+    color: var(--white-color);
+    font-size: 22px;
+    padding: 0 10px;
+    cursor:pointer;
+    outline: 0;
+    transition: color .3s;
+}
+.nextprev i:hover,
+.nextprev i:last-child
+{
+    color:var(--primary-color);
+
+}
